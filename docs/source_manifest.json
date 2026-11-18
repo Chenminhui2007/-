@@ -542,7 +542,7 @@
     {
       "path": "edumatch/tools/registry.py",
       "origin": "competition_upgrade",
-      "sha256": "45fce822227f1c46a838be216d7745584cc1f94e9e32928d2301ec5b81c9ad79"
+      "sha256": "72e1ca84806b69ee69beb671754a6ffe891543848882f163c51a9195e47695f0"
     },
     {
       "path": "edumatch/tools/supply_source.py",
@@ -567,7 +567,7 @@
     {
       "path": "mcp_servers/server.py",
       "origin": "competition_upgrade",
-      "sha256": "3499df2412bc5aa6e8b2b7e60490fe2155e40db4107ded77e9a7480e55c2df17"
+      "sha256": "3d576ab0b487ae9b6e67342fcc5f7328f6fea6d89c4b860e196e875274d89b65"
     },
     {
       "path": "ontology/skill_ontology.yaml",
@@ -1008,6 +1008,47 @@
       "path": "vendor/edu-material-harvest/skills/edu-material-harvest/scripts/selftest.py",
       "origin": "upstream_public_code",
       "sha256": "a41a8e640ea1b777cc9e3b0fe503b97c92e7a592fd38361bbade5eaa3b541a5d"
+    },
+    {
+      "path": "agent/university_workflow.py",
+      "origin": "university_upgrade_2026.3",
+      "sha256": "099db079a41b2fd4a9f52aac0f50a7d00d1c3c75876521ca8e0cf058ffe49fec"
+    },
+    {
+      "path": "analysis/university_scenarios.py",
+      "origin": "university_upgrade_2026.3",
+      "sha256": "9cac4b63b178823d2b0beb76321d7ba22d60e9e1457a3e46de5ec33653a554d1"
+    },
+    {
+      "path": "reporting/university.py",
+      "origin": "university_upgrade_2026.3",
+      "sha256": "efeed9bc29d11ccaedd639fdc7d616e82365b2f93d52ced3ec6015d60095091c"
+    },
+    {
+      "path": "scripts/university_analysis.py",
+      "origin": "university_upgrade_2026.3",
+      "sha256": "2f13c90c3883929ffd4ded6aa39620d44564ca448a32f922ba30bf69612b7675"
+    },
+    {
+      "path": "scripts/build_university_case.py",
+      "origin": "university_upgrade_2026.3",
+      "sha256": "3fdc2e3ff799790203c9094e68debc686fc5fa1b090eda6fda49688da41d6772"
+    },
+    {
+      "path": "edumatch/tools/university_tools.py",
+      "origin": "university_upgrade_2026.3",
+      "sha256": "1f29427793fde419bdc74acc207e4374ac70770a679661c3f7f9653d1bb81499"
+    },
+    {
+      "path": "docs/university_workflow.md",
+      "origin": "university_upgrade_2026.3",
+      "sha256": "0a2ce5ee2400ad6c40234f0b447648d3148f8a8b5c02eaf2044ffd64fb1b4158"
+    },
+    {
+      "path": "tests/test_university_workflow.py",
+      "origin": "university_upgrade_2026.3",
+      "sha256": "940e00a60ba23f7a6816d8890d7c6e8a2caaf713d29ea464aaefc4e9ca06e359"
     }
-  ]
+  ],
+  "current_version": "university-2026.3"
 }

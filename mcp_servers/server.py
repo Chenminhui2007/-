@@ -27,7 +27,7 @@ from edumatch.tools import TOOL_REGISTRY, call_tool  # noqa: E402
 
 PROTOCOL_VERSION = "2024-11-05"
 SERVER_NAME = "edumatch-mcp"
-SERVER_VERSION = "2026.2"
+SERVER_VERSION = "2026.3"
 
 
 class MCPServer:

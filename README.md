@@ -1,4 +1,4 @@
-# EduMatch Evidence 2026.2
+# EduMatch University 2026.3
 
 基于 [RedStoneGuo/EduMatch](https://github.com/RedStoneGuo/EduMatch) 的产教智对竞赛升级版。保留原作者RsGuo署名与MIT许可证；公开代码基线 `bda36d847b074da0ea030decf0d2573ff126649f`。
 
@@ -30,3 +30,11 @@ python -m mcp_servers.server --group evidence_v2 --selftest
 详细机制、文献依据、四任务映射、真实案例流程及限制见 [使用与方法说明](docs/evidence_v2.md)、[文献元数据](docs/method_sources.json)、[数据接入](data/README.md)。
 
 这是一版可交互调用的研究工具，尚不能证明真实培养或就业效果。高校审议、用户真实交互、实施验证和比赛报告仍需后续完成。
+
+## 2026.3 高校专业全流程
+
+新增 `university_analyze` MCP工具及 `scripts/university_analysis.py`：输入高校专业任务包，检查候选方案，保留过程日志、四任务JSON和单文件网页。主案例不再使用学生个人访谈。
+
+候选由调用AI依据文献和数据提供；本地入口确定性计算与重放，不在脚本内部调用远程模型。C1/C2为明确候选，不把程序返回当成模型自主反思。资源与实际教育效果未核实时保留条件。
+
+详细字段和调用步骤见 [高校流程说明](docs/university_workflow.md)。真实高校集成输入仅本地保存；公开测试中对应集成检查会明确跳过，容量和接口检查仍可独立运行。

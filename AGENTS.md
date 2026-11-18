@@ -8,3 +8,5 @@ Three dimensions remain separate. No unsupported composite TSI. Unknown is not z
 Task mappings, current teaching and complete study paths must be reviewed before formal coverage.
 Private data, interview logs, API secrets and copyrighted PDFs must not be committed.
 Run python -m pytest tests -q for this public package. Legacy source requires separately authorized datasets.
+
+University workflow 2026.3 is the current primary case. Read docs/university_workflow.md. No personal interview is required. Create explicit university briefs, preserve candidates and tool feedback, and export four-task result web pages. Do not claim institutional participation or real learning gains from a replay.

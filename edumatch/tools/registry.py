@@ -14,7 +14,7 @@ from typing import Any, Callable
 from edumatch.dataset import Dataset
 
 from . import (analysis_tools, competition_tools, evidence_v2_tools, education, evidence_tools, literature_tools, policy,
-               recruitment, supply_source)
+               recruitment, supply_source, university_tools)
 
 
 @dataclass
@@ -35,7 +35,7 @@ class ToolSpec:
 def _collect() -> dict[str, ToolSpec]:
     specs: list[ToolSpec] = []
     for module in (education, recruitment, policy, analysis_tools, evidence_tools, literature_tools,
-                   supply_source, competition_tools, evidence_v2_tools):
+                   supply_source, competition_tools, evidence_v2_tools, university_tools):
         specs.extend(module.specs())
     return {spec.name: spec for spec in specs}
 
