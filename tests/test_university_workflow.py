@@ -31,6 +31,14 @@ def test_real_case_complete_artifacts_and_rejection(tmp_path):
     assert all(hashlib.sha256((tmp_path/f['path']).read_bytes()).hexdigest()==f['sha256'] for f in manifest['files'])
     page=(tmp_path/'index.html').read_text(encoding='utf-8')
     assert '任务1' in page and '任务4' in page and '102' in page
+    if brief['request'].get('target_role')=='software_engineer':
+        inputs=json.loads((tmp_path/'inputs/university_input.json').read_text(encoding='utf-8'))
+        result=json.loads((tmp_path/'results/01_diagnosis.json').read_text(encoding='utf-8'))
+        alignment=result['diagnosis']['role_alignment']
+        assert inputs['courses'] and inputs['published_plans'] and inputs['sources']
+        assert alignment['posting_count']==result['diagnosis']['skills']['demand']['n_postings']>0
+        assert alignment['rows'] and all(row['courses'] for row in alignment['rows'])
+        assert '信管培养方案与软件工程师对照' in page and 'inputs/university_input.json' in page
     with pytest.raises(ValueError,match='已有内容'): run_university(brief,tmp_path)
 
 

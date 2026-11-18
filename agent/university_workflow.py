@@ -51,6 +51,42 @@ def run_university(brief, output, data=None):
         payload={'subject':brief['subject'],'request':request,'data_manifest_hash':digest(data.manifest),
                  'notice':'高校侧公开资料整理输入，不宣称学校直接委托或提交'})
     result=run_diagnosis(request,data=data)
+    diagnosis=result['diagnosis']
+    scale=diagnosis['scale']
+    demand=diagnosis['skills']['demand']
+    university_input={
+        'program':program,'courses':courses,'curriculum_totals':totals,
+        'published_plans':scale['published_plans'],'historical_resources':scale['historical_resources'],
+        'historical_outcomes':scale['historical_outcomes'],'sources':brief['evidence_review']['sources'],
+        'market_request':result['request'],'course_budget':brief['course_budget'],
+    }
+    write_json(output/'inputs/university_input.json',university_input)
+    if request.get('target_role')=='software_engineer':
+        if not demand['n_postings']:
+            raise ValueError('所选窗口没有软件工程师招聘样本，请检查职位和时间地域')
+        course_lookup={course['course_code']:course for course in courses}
+        skill_lookup={skill['skill_id']:skill for skill in demand['skills']}
+        rows=[]
+        for skill_id,codes,decision,action in brief.get('role_course_mapping',[]):
+            if skill_id not in skill_lookup or any(code not in course_lookup for code in codes):
+                raise ValueError('职位与课程对照包含未知词项或课程编码')
+            signal=skill_lookup[skill_id]
+            rows.append({
+                'skill_id':skill_id,'skill':signal['skill'],'posting_count':signal['posting_count'],
+                'prevalence':signal['prevalence'],'courses':[course_lookup[code] for code in codes],
+                'assessment_gap':decision,'action':action,
+            })
+        diagnosis['role_alignment']={
+            'position':'软件工程师','posting_count':demand['n_postings'],
+            'company_count':demand['n_company_keys'],'denominator':demand['denominator'],
+            'selection':'软件开发岗位群内，匹配职位名“软件工程师”或“软件开发工程师”，排除嵌入式、硬件、测试、算法等专门岗位。',
+            'rows':rows,
+        }
+        result['interaction_result_hash']=digest({k:v for k,v in result.items() if k!='interaction_result_hash'})
+    append_event(ledger,kind='input',origin='tool_result',payload={
+        'file':'inputs/university_input.json','hash':digest(university_input),
+        'courses':len(courses),'position':diagnosis.get('role_alignment',{}).get('position'),
+    })
     write_json(output/'results/01_diagnosis.json',result)
     append_event(ledger,kind='diagnosis',origin='tool_result',payload={
         'file':'results/01_diagnosis.json','hash':digest(result),'blockers':result['evidence_gate']})
@@ -115,7 +151,7 @@ def run_university(brief, output, data=None):
     write_json(output/'results/04_risks.json',risks)
     append_event(ledger,kind='risk',origin='agent_proposal',payload={'risks':risks,'probabilities_calibrated':False})
     from reporting.university import render_university
-    page=render_university(brief,result,decision,validation,risks)
+    page=render_university(brief,result,decision,validation,risks,university_input)
     (output/'index.html').write_text(page,encoding='utf-8')
     checks={'status':'passed','subject':'university_program','no_personal_interview':True,
         'selected_constraint_check':evaluation['curriculum_constraints']['valid'],

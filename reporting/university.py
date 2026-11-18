@@ -1,6 +1,5 @@
 """Self-contained university result page, generated from a single run's artifacts."""
 from html import escape
-import json
 
 
 def e(value):
@@ -15,26 +14,49 @@ def table(headers,rows):
     return '<div class="scroll"><table><thead><tr>'+''.join('<th>'+e(h)+'</th>' for h in headers)+'</tr></thead><tbody>'+''.join('<tr>'+''.join('<td>'+e(v)+'</td>' for v in row)+'</tr>' for row in rows)+'</tbody></table></div>'
 
 
-def render_university(brief,result,decision,validation,risks):
+def render_university(brief,result,decision,validation,risks,university_input=None):
     d=result['diagnosis']; skills=d['skills']; dem=skills['demand']; p=d['program']
+    alignment=d.get('role_alignment')
+    input_content=''
+    if university_input:
+        rows=university_input['courses']
+        input_content=(
+            '<p><a href="inputs/university_input.json">打开完整高校输入 JSON ↗</a></p>'+
+            table(['年份','公开普通本科招生计划','分省汇总'],[
+                [x['year'],x['published_ordinary_plan_total'],x['aggregation']] for x in university_input['published_plans']])+
+            '<details><summary>展开 '+e(len(rows))+' 条教学计划课程及原文页码</summary>'+
+            table(['课号','课程','类别','学分','学时','原件页码'],[
+                [c['course_code'],c['course_name'],c['category'],c['credits'],c['hours_total'],c['pdf_page']] for c in rows])+'</details>'+
+            '<details><summary>展开历史在校人数、师资和毕业去向</summary>'+
+            table(['学年','历史资源','数量','原件页码'],[
+                [x['period'],x['metric'],f"{x['value']} {x['unit']}",x['pdf_page']] for x in university_input['historical_resources']])+
+            table(['届次','毕业人数','去向落实率','截止日'],[
+                [x['cohort'],x['graduates'],x['destination_rate_pct']+'%',x['cutoff']] for x in university_input['historical_outcomes']])+'</details>'+
+            '<details><summary>展开来源原件和核读定位</summary>'+
+            table(['来源','存档路径'],[[x['id'],x['path']] for x in university_input['sources']])+'</details>')
     selected=next(x for x in decision['candidates'] if x['candidate_id']==decision['selected_candidate'])
     ev=selected['evaluation']; blocks=[]
     def section(id,title,body):
         blocks.append(f'<section id="{id}"><div class="eyebrow">{e(id.upper())}</div><h2>{e(title)}</h2>{body}</section>')
     section('overview','高校输入与本次结论',
-        '<div class="notice">高校侧公开资料整理输入；未宣称学校直接委托。课程建议尚未实施，当前资源可行性为条件状态。</div>'+
         '<div class="cards">'+''.join(f'<article><span>{e(k)}</span><strong>{e(v)}</strong><small>{e(n)}</small></article>' for k,v,n in [
-        ('分析对象',p['major'],p['school']+' · '+str(p['year'])+'版'),('市场样本',str(dem['n_postings'])+' 月度广告','北京2024—2025；不等于职位空缺人数'),
-        ('企业键',dem['n_company_keys'],'去重企业键不保证法人唯一'),('最终候选',decision['selected_candidate'],'编码约束通过，容量待核')])+'</div>'+
+        ('分析对象',p['major'],p['school']+' · '+str(p['year'])+'版'),('目标职位',alignment['position'] if alignment else '所选岗位群','需求侧对照'),
+        ('市场样本',str(dem['n_postings'])+' 月度广告',str(dem['n_company_keys'])+' 个企业键'),('调整方案',decision['selected_candidate'],'课内试点，先复核容量')])+'</div>'+
         '<h3>决策摘要</h3><p>'+e(brief['selection_reason'])+'</p>'+
-        '<p>正式综合分、真实学习提升、就业提升均未识别。网页展示真实数据计算、拟议动作与条件推演三类结果。</p>'+
         table(['输入','内容','边界'],[
             ['培养数据','2024指导性教学计划；2020历史大纲','完整毕业条件、现行大纲适用性未核验'],
             ['市场数据','2024/2025完整年度；2026Q1同期补充','原始广告为入门候选，非全部毕业生可申请'],
             ['招生与资源','官方计划、历史资源及毕业去向','实际录取/报到和新增可用容量未知'],
-            ['约束','总学分与总学时净增量为0','项目保守预算，不冒充学校已批准政策']]))
+            ['约束','总学分与总学时净增量为0','本次案例预算']])+input_content)
+    comparison=''
+    if alignment:
+        comparison='<h3 id="role-comparison">信管培养方案与软件工程师对照</h3><p>'+e(alignment['selection'])+'</p>'+table(
+            ['职位要求','广告数／出现率','课程计划定位','课程与考核对照','调整动作'],[
+                [row['skill'],f"{row['posting_count']} ／ {pct(row['prevalence'])}",
+                 '、'.join(f"{c['course_name']}（第{c['pdf_page']}页）" for c in row['courses']),
+                 row['assessment_gap'],row['action']] for row in alignment['rows']])
     section('diagnosis','任务1 · 技能、方向、规模三维诊断',
-        '<h3>市场表达的能力线索</h3><p>以下为旧词表探索结果，出现率分母为本次广告并集。工具词有重叠，不直接作为正式能力权重。</p>'+
+        comparison+'<h3>招聘关键词统计</h3><p>出现率按目标职位广告计算。同一广告每个词项计一次，课程考核另核对。</p>'+
         table(['词项','广告数','出现率'],[[s['skill'],s['posting_count'],pct(s['prevalence'])] for s in dem['skills'][:12]])+
         '<h3>六项任务与课程证据</h3>'+table(['任务','定义','课程线索','当前状态'],[
         [t['id'],t['definition'],'、'.join(c['course_name'] for c in t['course_candidates']),'U：版本/任务层次/完整路径待核'] for t in brief['tasks']])+
@@ -60,7 +82,13 @@ def render_university(brief,result,decision,validation,risks):
     content+='<p>本轮没有真实志愿与确认容量，不生成分流名单；原分配算法作为后续工具保留。</p><h3>招生反馈机制</h3><p>'+e(decision['admissions_policy'])+'</p>'
     content+='<h3>新增、删减、合并与学时决定</h3><p>'+e(brief['course_add_delete_merge']['reason'])+'</p><p>'+e(brief['course_add_delete_merge']['hours_design'])+'</p>'
     section('proposal','任务2 · 课程、方向与招生调整',content)
-    content='<h3>可计算的前后对照</h3>'+table(['动作','课程','原学分→拟议','原学时→拟议','真实学习提升'],[
+    endpoints=[(run['name'],run['rows'][-1]) for run in validation['simulation']['runs']]
+    content='<h3>如果不调整，招生计划如何变化</h3><p>固定计划与反馈规则使用相同外部情景，比较2034年与设定需求目标的差额。</p>'+table(
+        ['情景','设定目标','固定计划','采用反馈规则','距目标差额'],[
+            [name,r['target_if_signal_allows'],r['baseline']['conditional_intake'],r['adjusted']['conditional_intake'],
+             f"{abs(r['baseline']['conditional_intake']-r['target_if_signal_allows'])} → {abs(r['adjusted']['conditional_intake']-r['target_if_signal_allows'])}"]
+            for name,r in endpoints if r['target_if_signal_allows'] is not None])
+    content+='<h3>课程学分与学时对照</h3>'+table(['动作','课程','原学分→拟议','原学时→拟议','试点效果'],[
         [x['action_id'],x['course'],f'{x["before_credits"]} → {x["after_credits"]}',f'{x["before_hours"]} → {x["after_hours"]}','未识别'] for x in validation['comparison']])
     content+='<h3>资源条件</h3>'+table(['资源','期间','需求','可用量','状态'],[
         [r['id'],r['period'],f'{r["demand"]} {r["unit"]}','未知' if r['available'] is None else r['available'],r['status']] for r in ev['resource_pressure']])
@@ -77,7 +105,7 @@ def render_university(brief,result,decision,validation,risks):
         [x['scenario'],x['assumed_available_teacher_hours'],x['assumed_available_lab_seat_hours'],f'{x["initial_teacher_shortfall"]:.1f} / {x["initial_lab_shortfall"]}',f'{x["final_teacher_shortfall"]:.1f} / {x["final_lab_shortfall"]}',x['gated_pilot_size']] for x in stress['rows']])
     content+='<p>资源模型含30人班额的阶梯效应；31人不等于30人的线性放大。规模由条件可行上界约束，不给市场最优招生结论。</p>'
     content+='<h3>后续实施验证设计</h3><p>'+e(validation['learning_validation_plan'])+'</p>'
-    section('validation','任务3 · 约束检查、条件推演与验证边界',content)
+    section('validation','任务3 · 反事实对比与实施条件',content)
     section('risks','任务4 · 与动作绑定的风险及回退',table(['风险','关联动作','触发','应对','监测'],[
         [r['risk'],'、'.join(r['action_ids']),r['trigger'],r['response'],r['monitor']] for r in risks])+
         '<p>发生概率缺乏校准数据，保持未知。责任角色为建议，不代表已取得学校授权。</p>')

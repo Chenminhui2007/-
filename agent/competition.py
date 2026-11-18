@@ -29,12 +29,14 @@ def run_competition(request: dict[str,Any], data: CompetitionData | None=None):
     if not isinstance(request,dict): raise ValueError('请求须为JSON对象')
     data=data or CompetitionData.load(); request=deepcopy(request)
     allowed={'program_id','regions','years','quarter','roles','selected_electives','selected_electives_after','exclude_geography','exclude_cluster',
-             'include_preferred','action_candidates','course_budget','allocation','parameters','scenarios'}
+             'include_preferred','action_candidates','course_budget','allocation','parameters','scenarios','target_role'}
     if set(request)-allowed: raise ValueError('未知请求字段: '+','.join(sorted(set(request)-allowed)))
     program=data.program(request.get('program_id','BJUT_SE_2025'))
     request={'program_id':program['id'],'regions':['北京'],'years':[2024,2025],'quarter':None,
         'roles':program['default_role_groups'],'selected_electives':[],'exclude_geography':True,
         'exclude_cluster':False,'include_preferred':True,**request}
+    if request.get('target_role')=='software_engineer':
+        request['roles']=['软件开发']
     integrity=data.verify()
     if not integrity['ok']: raise ValueError('冻结输入哈希不匹配，请先核验数据：'+str(integrity['mismatches']))
     trace=[{'tool':'verify_inputs','status':'ok','observation':integrity}]

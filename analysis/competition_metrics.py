@@ -9,6 +9,13 @@ from typing import Any
 
 ROLES = ('软件开发', 'AI算法与工程', '数据分析与工程', '信息系统与业务', '测试与质量')
 REGIONS = ('北京', '天津', '河北')
+SOFTWARE_ENGINEER_TITLE = re.compile(r'软件(?:开发)?工程师', re.I)
+SPECIALIZED_SOFTWARE_TITLE = re.compile(r'嵌入式|固件|驱动|硬件|测试|感知|车载|汽车|算法|下位机|通信|存储|仿真')
+
+
+def matches_software_engineer(title):
+    """Match a single recruitment title family within the broader software group."""
+    return bool(SOFTWARE_ENGINEER_TITLE.search(title) and not SPECIALIZED_SOFTWARE_TITLE.search(title))
 
 
 @lru_cache(maxsize=30000)
@@ -39,18 +46,21 @@ def extract_mentions(text, skills):
 
 
 def select_jobs(jobs, *, regions=('北京',), years=(2024,2025), quarter=None, roles=(),
-                geography_flags=(), exclude_geography=True, cluster_flags=(), exclude_cluster=False):
+                geography_flags=(), exclude_geography=True, cluster_flags=(), exclude_cluster=False,
+                target_role=None):
     if not regions or set(regions)-set(REGIONS): raise ValueError('地域必须是北京、天津、河北的非空子集')
     if not years or set(years)-{2024,2025,2026}: raise ValueError('年份须在2024—2026之间')
     if quarter not in (None,1,2,3,4): raise ValueError('季度必须为1—4或空')
     if 2026 in years and quarter != 1: raise ValueError('2026仅有一季度，须选择Q1；跨年比较也使用Q1')
     if set(roles)-set(ROLES): raise ValueError('未知岗位群')
+    if target_role not in (None,'software_engineer'): raise ValueError('未知目标职位')
     geo={r['month_id'] for r in geography_flags}; cluster={r['month_id'] for r in cluster_flags}
     selected={}
     for j in jobs:
         if j['region'] not in regions or j['year'] not in years: continue
         if quarter and (int(j['month'][5:7])-1)//3+1 != quarter: continue
         if roles and not set(roles).intersection(j['role_groups']): continue
+        if target_role=='software_engineer' and not matches_software_engineer(j['title']): continue
         if exclude_geography and j['month_id'] in geo: continue
         if exclude_cluster and j['month_id'] in cluster: continue
         selected.setdefault(j['month_id'],j)
@@ -163,6 +173,7 @@ def diagnose(data, request):
     selected,path=course_path(courses,request.get('selected_electives',[]),totals)
     options=dict(regions=tuple(request.get('regions',['北京'])),years=tuple(request.get('years',[2024,2025])),
         quarter=request.get('quarter'),roles=tuple(request.get('roles',program['default_role_groups'])),
+        target_role=request.get('target_role'),
         geography_flags=data.read('geography_flags'),cluster_flags=data.read('cluster_flags'),
         exclude_geography=request.get('exclude_geography',True),exclude_cluster=request.get('exclude_cluster',False))
     jobs=select_jobs(data.jobs,**options)
@@ -183,12 +194,14 @@ def diagnose(data, request):
             periods.append({'year':year,'window':'Q1' if quarter else '全年','n_postings':d['n_postings'],
                             'largest_company_share':d['largest_company_share'],'median_advertised_midpoint':d['median_advertised_monthly_midpoint'],
                             'warning':'广告样本及来源结构变动，不等同于市场总需求增长'})
-    all_roles=select_jobs(data.jobs,**(options|{'roles':()}))
+    all_roles=select_jobs(data.jobs,**(options|{'roles':(),'target_role':None}))
     directions=[]
     for role in options['roles']:
         js=[j for j in all_roles if role in j['role_groups']]
+        if options['target_role']=='software_engineer':
+            js=[j for j in js if matches_software_engineer(j['title'])]
         ds=demand_summary(js,data.skills,include_preferred=current_preferred)
-        directions.append({'role':role,'n_postings':len(js),'window_denominator':len(all_roles),'posting_share':len(js)/len(all_roles) if all_roles else None,
+        directions.append({'role':'软件工程师' if options['target_role']=='software_engineer' else role,'n_postings':len(js),'window_denominator':len(all_roles),'posting_share':len(js)/len(all_roles) if all_roles else None,
             'top_skills':[{k:s[k] for k in ('skill_id','skill','prevalence')} for s in ds['skills'][:8]],
             'course_modules':{s['skill_id']:topics[s['skill_id']] for s in ds['skills'][:8]},'confirmed_seat_capacity':None,
             'note':'岗位群允许重叠，份额不相加；课程模块是课名代理，名额另需学院确认'})
