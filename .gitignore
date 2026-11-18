@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.env
+.env.*
+*.har
+private_sessions/
+runs/
+data/*
+!data/README.md
+*.pdf
+*.docx
+*.xlsx
+*.zip

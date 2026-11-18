@@ -1,0 +1,1 @@
+All example teaching and task inputs are synthetic. No user interview is included. imis_request.json is a query configuration, not a dataset. The expected coverage interval is 0–100 with no point estimate; the proposed course remains conditional because evidence and capacity are missing.

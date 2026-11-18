@@ -1,0 +1,73 @@
+{
+  "courses": [
+    {
+      "course_id": "SYNTHETIC:c",
+      "program_id": "SYNTHETIC",
+      "course_name": "Synthetic course",
+      "category": "专业选修课",
+      "requirement": "elective_pool",
+      "credits": 2,
+      "hours_total": 32,
+      "eligible_for_computation": true
+    }
+  ],
+  "actions": [
+    {
+      "id": "SYNTHETIC-A1",
+      "kind": "revise",
+      "source_course_ids": [
+        "SYNTHETIC:c"
+      ],
+      "outputs": [
+        {
+          "course_id": "SYNTHETIC:c",
+          "program_id": "SYNTHETIC",
+          "course_name": "Synthetic course",
+          "category": "专业选修课",
+          "requirement": "elective_pool",
+          "credits": 2,
+          "hours_total": 32,
+          "eligible_for_computation": true,
+          "learning_outcome": "Explain a reproducible synthetic analysis",
+          "assessment": "Independent task and oral explanation",
+          "activities": [
+            {
+              "description": "Synthetic practice allocation",
+              "hours": 32,
+              "skill_ids": [
+                "a"
+              ]
+            }
+          ],
+          "prerequisites": [],
+          "teaching_year": 3
+        }
+      ],
+      "rationale": "Synthetic mechanism test only; hours are illustrative",
+      "literature_ids": [
+        "L15"
+      ],
+      "demand_skill_ids": [
+        "a"
+      ],
+      "effective_entry_year": 2027,
+      "task_mapping_reviewed": false,
+      "evidence_support": []
+    }
+  ],
+  "literature_ids": [
+    "L15"
+  ],
+  "task_ids": [
+    "a"
+  ],
+  "resources": [
+    {
+      "id": "synthetic-lab",
+      "demand": 32,
+      "available": null,
+      "unit": "seat hours",
+      "period": "synthetic term"
+    }
+  ]
+}

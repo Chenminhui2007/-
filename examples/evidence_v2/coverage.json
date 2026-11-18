@@ -1,0 +1,35 @@
+{
+  "tasks": [
+    {
+      "id": "a",
+      "definition": "Synthetic observable task a",
+      "framework_reference": "Synthetic fixture; not an actual university mapping",
+      "mapping_reviewed": true
+    },
+    {
+      "id": "b",
+      "definition": "Synthetic observable task b",
+      "framework_reference": "Synthetic fixture; not an actual university mapping",
+      "mapping_reviewed": true
+    }
+  ],
+  "postings": [
+    {
+      "id": "synthetic-1",
+      "task_ids": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "synthetic-2",
+      "task_ids": [
+        "a"
+      ]
+    }
+  ],
+  "evidence": [],
+  "curriculum_version": "synthetic-v1",
+  "path_verified": true,
+  "evidence_snapshot": "synthetic-only"
+}

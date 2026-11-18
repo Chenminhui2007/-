@@ -1,0 +1,1013 @@
+{
+  "upstream": "https://github.com/RedStoneGuo/EduMatch",
+  "upstream_commit": "bda36d847b074da0ea030decf0d2573ff126649f",
+  "license": "MIT; Copyright (c) 2026 RsGuo",
+  "scope": "code-only explicit allowlist, no raw or personal data",
+  "files": [
+    {
+      "path": "LICENSE",
+      "origin": "upstream_public_code",
+      "sha256": "d4fa9f0175cb91dd4af01351aa761dad5034ed60b032275c29b4e89045515a58"
+    },
+    {
+      "path": "agent/__init__.py",
+      "origin": "upstream_public_code",
+      "sha256": "9688e28f96838b79e545d8b232e17c5c324e61c06a134dc1aaaa63fd5ecf4955"
+    },
+    {
+      "path": "agent/competition.py",
+      "origin": "competition_upgrade",
+      "sha256": "f0329f0fbeed6d4e3ca59b906c0b39351c77846b7da09d98dc4b1c8baadddd90"
+    },
+    {
+      "path": "agent/core.py",
+      "origin": "upstream_public_code",
+      "sha256": "190b85d787a5070af1c10982f502d78ec6f0a057fc0fd479270bb2c82fe16abe"
+    },
+    {
+      "path": "agent/evidence_session.py",
+      "origin": "competition_upgrade",
+      "sha256": "caf9b6263e693ad6fffedbfa81cc981f49c0adc17b71921b517bee4abd6dfb20"
+    },
+    {
+      "path": "agent/findings.py",
+      "origin": "upstream_public_code",
+      "sha256": "08ba9df84dcd0570a34defa1b1fc77e00e2b97222938b697df196fd3f351b973"
+    },
+    {
+      "path": "agent/html_report.py",
+      "origin": "upstream_public_code",
+      "sha256": "2eabea1a7307a938124aa2120bbc92adf52dc48ee58448f767972374ebc3a76e"
+    },
+    {
+      "path": "agent/llm.py",
+      "origin": "upstream_public_code",
+      "sha256": "14f519da9953db14445caedbef9d9298ff12d2e3e694aa42ac85e517df17d34f"
+    },
+    {
+      "path": "agent/planner.py",
+      "origin": "upstream_public_code",
+      "sha256": "777e723fc3b8746da916078498bca7daf32918d46f98bd24972158698cfa17e9"
+    },
+    {
+      "path": "agent/report.py",
+      "origin": "upstream_public_code",
+      "sha256": "fdd9d6dd6170cd0d0d2c4cecd87e6d30cb3e8b24b24d0079df7cfc3c0d3d009c"
+    },
+    {
+      "path": "agent/runner.py",
+      "origin": "upstream_public_code",
+      "sha256": "c1cb12b73b916f4beb4d29cb40b5b90187fdd4b3f3369add1ff390324ef94f5f"
+    },
+    {
+      "path": "agent/scope.py",
+      "origin": "upstream_public_code",
+      "sha256": "1852fba74c3e9085557094a894f2a22e3ca2e6a3e1f18abf3d652720bfd2f79d"
+    },
+    {
+      "path": "agent/scoped_report.py",
+      "origin": "upstream_public_code",
+      "sha256": "1a62cb5d97abeb60d2686707fd922339bf22487d14fecb73aece4f067a530d79"
+    },
+    {
+      "path": "analysis/__init__.py",
+      "origin": "upstream_public_code",
+      "sha256": "59c273c860292f5dce3f1fc726f2e71650b50b732f64eb5477a52423fc5f4f1b"
+    },
+    {
+      "path": "analysis/benchmark.py",
+      "origin": "upstream_public_code",
+      "sha256": "6393c8ef50ca77bb8f458202939d8b910759ba740afbec09e4cd57e556937cc4"
+    },
+    {
+      "path": "analysis/capability.py",
+      "origin": "upstream_public_code",
+      "sha256": "89ad6aafcba5ae43ac67725f2f65963acff29c741cfdcaa41c280288589c48f4"
+    },
+    {
+      "path": "analysis/competition_actions.py",
+      "origin": "competition_upgrade",
+      "sha256": "ab1835215e390799a0b17542189a4762974624eef56635b206ece45747d877e0"
+    },
+    {
+      "path": "analysis/competition_metrics.py",
+      "origin": "competition_upgrade",
+      "sha256": "dea414412604a727da7f419944fbd914fd2d39a0052d99874ba0f1ce058630fe"
+    },
+    {
+      "path": "analysis/competition_simulation.py",
+      "origin": "competition_upgrade",
+      "sha256": "4119ee57b9317052bb44013c595d5cb49b9340ba220b5e6397c8fa224e07ab72"
+    },
+    {
+      "path": "analysis/competition_validation.py",
+      "origin": "competition_upgrade",
+      "sha256": "0d233ccdf6aef611035f1950e8aec728f497b2b38c24c1199eff6d3be6c4c54d"
+    },
+    {
+      "path": "analysis/confidence.py",
+      "origin": "upstream_public_code",
+      "sha256": "2608167a691e5eb298455512fde6dcf7ec5af3dc6ce84d69a0abcd5067c7d0b7"
+    },
+    {
+      "path": "analysis/conflict_resolution.py",
+      "origin": "upstream_public_code",
+      "sha256": "51e682523f97cf6f0ee7e9e870788dcfff940b40a8c84a338538a2bfe2b3d4c2"
+    },
+    {
+      "path": "analysis/decision_support.py",
+      "origin": "upstream_public_code",
+      "sha256": "3db268b12c667347910199d6b487074b51d8d7461b8bf65ce0cf47cdd2170077"
+    },
+    {
+      "path": "analysis/demand.py",
+      "origin": "upstream_public_code",
+      "sha256": "90bd82e15c51771150607331f3d3c223367d67ddf6507fe8d5d5a4669bef425a"
+    },
+    {
+      "path": "analysis/embeddings.py",
+      "origin": "upstream_public_code",
+      "sha256": "484c5f8449b5fb21e5350b1b35290dcb1b4623233c79b5c1d4a2c58802743cee"
+    },
+    {
+      "path": "analysis/evaluation.py",
+      "origin": "upstream_public_code",
+      "sha256": "41721824e39e16831fdd18d4e0319d5c157de9fc842703eff9248ccca95c6d04"
+    },
+    {
+      "path": "analysis/evidence_metrics.py",
+      "origin": "competition_upgrade",
+      "sha256": "6b472731ee53456b62bce9cbbf82501c527a55e00a0c168b2ebdca874d38d085"
+    },
+    {
+      "path": "analysis/evidence_proposals.py",
+      "origin": "competition_upgrade",
+      "sha256": "f210e562ec79b6d363b8b61ec894f57464b0ac2cbf9f38900fd1ce0357f34ac4"
+    },
+    {
+      "path": "analysis/fit.py",
+      "origin": "upstream_public_code",
+      "sha256": "498ed934ab31f48e9fae4237bfed1cf212c87c8464fa9aaf47d9e6ed92ea5c08"
+    },
+    {
+      "path": "analysis/matching.py",
+      "origin": "upstream_public_code",
+      "sha256": "1e703a042161264d7ecd3118b5f8dd29fc06184666f38a53cf97e3d6aaa5d986"
+    },
+    {
+      "path": "analysis/mechanism.py",
+      "origin": "upstream_public_code",
+      "sha256": "8bf80fddc748032c76c980ab4a79f895b659e56bb70f062e0467579b78218ea0"
+    },
+    {
+      "path": "analysis/metric_graph.py",
+      "origin": "upstream_public_code",
+      "sha256": "d699410e3b423d4b60523c916c82b5c0283e2414917b512ca3351f0c197c142c"
+    },
+    {
+      "path": "analysis/micro.py",
+      "origin": "upstream_public_code",
+      "sha256": "1996ed560329dedb77f7ef37cf715dee9a6eb0809137812194ce5742debc226b"
+    },
+    {
+      "path": "analysis/objective_alignment.py",
+      "origin": "upstream_public_code",
+      "sha256": "733a52616015724a194f3b3b2adbb7205de96d7210d3054aa66acf703899dcd5"
+    },
+    {
+      "path": "analysis/occupation_match.py",
+      "origin": "upstream_public_code",
+      "sha256": "9fdaa3d24d1dbf7c51ecc322495bac63ccd0b2f7b5e2d046ceee94a4207849ae"
+    },
+    {
+      "path": "analysis/primary_tsi.py",
+      "origin": "upstream_public_code",
+      "sha256": "aee5f2f3ff706d055323d9d39237067fb20eab78147131a294b70b2d80d325c1"
+    },
+    {
+      "path": "analysis/scenario.py",
+      "origin": "upstream_public_code",
+      "sha256": "59154eb49d29d9ca74bd0b46a929ad4cfd6f6ef0477027ae63bf855f1e5dbdca"
+    },
+    {
+      "path": "analysis/semantic.py",
+      "origin": "upstream_public_code",
+      "sha256": "28a669b1497e0f1ced45b2a6036edcea7961c59f948d91a0587826e6a06387c1"
+    },
+    {
+      "path": "analysis/semantic_evidence.py",
+      "origin": "upstream_public_code",
+      "sha256": "43c1f9ed16625bfb56d9a3fb4f1126c37f21c9984025ac2e95d829eaa4ea69a4"
+    },
+    {
+      "path": "analysis/simulation.py",
+      "origin": "upstream_public_code",
+      "sha256": "1bc2fe807e8fa2139b4c328bda3be9b6a619083c0e67f6612c74d9c1d0b45cac"
+    },
+    {
+      "path": "analysis/skill_gap.py",
+      "origin": "upstream_public_code",
+      "sha256": "59829d284e4f52462f1732e6d02f2129ff7fd1d07e4a76164cfb1aabc435478d"
+    },
+    {
+      "path": "analysis/supply.py",
+      "origin": "upstream_public_code",
+      "sha256": "e0b73c83f611b3d53876c7fc7f7d8d1fb395894ffe0b04b69b19f2a439eaa91c"
+    },
+    {
+      "path": "analysis/trend.py",
+      "origin": "upstream_public_code",
+      "sha256": "da7099ad1a8e6d058e9ff5fcf1ce565724f5a00fb6f6ae29cd3a2236cad67d3f"
+    },
+    {
+      "path": "analysis/tsi.py",
+      "origin": "upstream_public_code",
+      "sha256": "0771fd15d3bc4f6236bb405f8a1b1a59be85c15823ff1260a8784181e21eabaa"
+    },
+    {
+      "path": "analysis/tsi_tree.py",
+      "origin": "upstream_public_code",
+      "sha256": "5f2bc322356757705629f6ca5d82f4a2a13e8173d1d748f9961f15766f327e3f"
+    },
+    {
+      "path": "analysis/tsi_v1.py",
+      "origin": "upstream_public_code",
+      "sha256": "a7a08b3b9f82e5240d89c23d8a9e5e70c28fc571a52658b8808b29e3a938639e"
+    },
+    {
+      "path": "config/config.yaml",
+      "origin": "upstream_public_code",
+      "sha256": "f94385e3e5314a5b754b5e4fdaf98719615096ca249d9c7cc78cf8e648aee160"
+    },
+    {
+      "path": "config/education_sources.yaml",
+      "origin": "upstream_public_code",
+      "sha256": "008a3ee47432be41ba40802d3074c06b8e7db9bd9818686eaa0ed0f59ec270b0"
+    },
+    {
+      "path": "docs/evidence_v2.md",
+      "origin": "competition_upgrade",
+      "sha256": "eeb61fff6eb220599d2d275fb9862c1cad61682f84afcbbc89d5b49febbba701"
+    },
+    {
+      "path": "edumatch/__init__.py",
+      "origin": "upstream_public_code",
+      "sha256": "b9ef8ab534539eb44f0ef72774edba2d0da8a5fd10aaaaf86b263f5892fadf1c"
+    },
+    {
+      "path": "edumatch/auto_harvest.py",
+      "origin": "upstream_public_code",
+      "sha256": "eaa7dfb06d103c93326be7d89782729b8d651dedd98703bb72289791ff60ae2e"
+    },
+    {
+      "path": "edumatch/competition_data.py",
+      "origin": "competition_upgrade",
+      "sha256": "c0497df5642d02cee5562503b541f746b98b75a9037b3f27063ea92998d1177d"
+    },
+    {
+      "path": "edumatch/config.py",
+      "origin": "upstream_public_code",
+      "sha256": "fa82c2e82a1ea3371402fa670eea6eef51fb3b1f07951d15282173f4d2d5332d"
+    },
+    {
+      "path": "edumatch/coverage_pipeline.py",
+      "origin": "upstream_public_code",
+      "sha256": "0109a6ac659acdcca8371101d8fa3b97a1a8250a7d7c630e1efeace9ee8a410f"
+    },
+    {
+      "path": "edumatch/coverage_state.py",
+      "origin": "upstream_public_code",
+      "sha256": "7ee814520a615ec717e1fb9f8bd6a8373883e6bb23c15193becdca579b01750e"
+    },
+    {
+      "path": "edumatch/dataset.py",
+      "origin": "upstream_public_code",
+      "sha256": "8ad550e41e4a3516f59a4c9a6cee7ffff309ce7212fd0d3474f991d958e5aaed"
+    },
+    {
+      "path": "edumatch/db.py",
+      "origin": "upstream_public_code",
+      "sha256": "4e33c024f623a3a20598240633dfc4ff41f4ec0fd94303b92daef4f2cbfa8090"
+    },
+    {
+      "path": "edumatch/domain_discovery.py",
+      "origin": "upstream_public_code",
+      "sha256": "68f403ac2ef82dc701d800d1d3432f6e2f0c1c1459e096a343d081a21636d1f1"
+    },
+    {
+      "path": "edumatch/engine.py",
+      "origin": "upstream_public_code",
+      "sha256": "60552c2378f069e48b4901240cd6331284998d15a3f19f2d684a9129c8bf340c"
+    },
+    {
+      "path": "edumatch/evidence.py",
+      "origin": "upstream_public_code",
+      "sha256": "2a0c61821034cc2369953acc8c588bb4a3f6211667274152e1fabb9b2ca09ee5"
+    },
+    {
+      "path": "edumatch/harvest/__init__.py",
+      "origin": "upstream_public_code",
+      "sha256": "e5cf1cecb2ee7851d6f93985e8739823086a065af93eec3f9754904b1b13dcd7"
+    },
+    {
+      "path": "edumatch/harvest/client.py",
+      "origin": "upstream_public_code",
+      "sha256": "abe43f27e192b17fffe097f7aad4b90998f705a3610aeb6059c34b3005f26818"
+    },
+    {
+      "path": "edumatch/harvest/importer.py",
+      "origin": "upstream_public_code",
+      "sha256": "79573c5c0e71ca0f3bc125ac02ebe8e2dcbf4916e4ec2f9144be86550cf4bf22"
+    },
+    {
+      "path": "edumatch/ingest/__init__.py",
+      "origin": "upstream_public_code",
+      "sha256": "87501dca0cd15d9d73a4cc730943c1c96ef55645408baaf6d5ee6b2acc038d07"
+    },
+    {
+      "path": "edumatch/ingest/courses.py",
+      "origin": "upstream_public_code",
+      "sha256": "340904a90002b962750d6b904b2654e4438edec2e4cbb8c661623b2c28149792"
+    },
+    {
+      "path": "edumatch/ingest/docx_reader.py",
+      "origin": "upstream_public_code",
+      "sha256": "86331be74064d9a8e14263becf709a43fc39c63ffaef697262beea19ced64594"
+    },
+    {
+      "path": "edumatch/ingest/education_facts.py",
+      "origin": "upstream_public_code",
+      "sha256": "cf2576fea8fe3f0d57686b1cdb01e0eac001cbc66be739d9faa436d308c3b595"
+    },
+    {
+      "path": "edumatch/ingest/legacy.py",
+      "origin": "upstream_public_code",
+      "sha256": "e62bd6199a2a0d2e2f93640ce63c983345cc09305168950d40bc7c722685aae0"
+    },
+    {
+      "path": "edumatch/ingest/pdf_facts.py",
+      "origin": "upstream_public_code",
+      "sha256": "d5c2fa6d89fd3858ba77936a0b084a0951cbf6d4b32898897fa45de22449b88e"
+    },
+    {
+      "path": "edumatch/ingest/pdf_major_tables.py",
+      "origin": "upstream_public_code",
+      "sha256": "13f1cfe3cd4162c11634cdc30788d1425b5f71db93b2ab64b0be0321a95eb2b9"
+    },
+    {
+      "path": "edumatch/ingest/pdf_reader.py",
+      "origin": "upstream_public_code",
+      "sha256": "6942f9df28d0c5c89d7154e4757bfdea8a814ed4dd7152cc10293552ec3c9f40"
+    },
+    {
+      "path": "edumatch/ingest/plan_tables.py",
+      "origin": "upstream_public_code",
+      "sha256": "f2b4908bacc1174c2159eee06354e98f1547712c633fb76347afca9f99ce50d0"
+    },
+    {
+      "path": "edumatch/ingest/policy.py",
+      "origin": "upstream_public_code",
+      "sha256": "56c8b58cb0729d6b65efbead927fe34bbd6ea94a96d7261f12eb8d136c931624"
+    },
+    {
+      "path": "edumatch/jobs/__init__.py",
+      "origin": "upstream_public_code",
+      "sha256": "0d3e8981365b1a49de7106f5b481c385dbeedda52a91682b6c117e43022d849e"
+    },
+    {
+      "path": "edumatch/jobs/adapters/__init__.py",
+      "origin": "upstream_public_code",
+      "sha256": "8a2c5ea7147bded591eb0b715dca3eeae452f9ed0fe8ab07ee7687ea3f51b64f"
+    },
+    {
+      "path": "edumatch/jobs/adapters/zhaopin.py",
+      "origin": "upstream_public_code",
+      "sha256": "ae0ba8c5503a378298599c0c8baa81e6ba1304ab24981d5e8e2eb53819c8bdd5"
+    },
+    {
+      "path": "edumatch/jobs/crawler.py",
+      "origin": "upstream_public_code",
+      "sha256": "c6122453fd43584723368203a0737476c7c9669b6ae319ab6aa253048567f945"
+    },
+    {
+      "path": "edumatch/jobs/dedup.py",
+      "origin": "upstream_public_code",
+      "sha256": "a976408ef4172dcd6e836597bd7a96d8b0474e6896baec9a431ea3094e3fc71e"
+    },
+    {
+      "path": "edumatch/jobs/demand.py",
+      "origin": "upstream_public_code",
+      "sha256": "acd1818bf5dc5a3ea135a2b342e117ff9c1bc6e2696cf74ed266308ab499ac88"
+    },
+    {
+      "path": "edumatch/jobs/har_import.py",
+      "origin": "upstream_public_code",
+      "sha256": "215a9861f438276f7ddc0d474578bb814079a311f1416d5aeac556a1c7008c3a"
+    },
+    {
+      "path": "edumatch/jobs/normalize.py",
+      "origin": "upstream_public_code",
+      "sha256": "ae12da59b51b577b84417b78ffd16b434230a88cb742de537418481955db4fa6"
+    },
+    {
+      "path": "edumatch/jobs/permitted_crawler.py",
+      "origin": "upstream_public_code",
+      "sha256": "033544eebadbe7195d230a967649fd5cca89a5a514c01b4196d411899b7a4762"
+    },
+    {
+      "path": "edumatch/literature.py",
+      "origin": "upstream_public_code",
+      "sha256": "5eef0030af4dbd4f26674121e3f92a28f4341488fc5e609d7e7e758f4fb735dc"
+    },
+    {
+      "path": "edumatch/local_supply.py",
+      "origin": "upstream_public_code",
+      "sha256": "92510d24916268733f36fd9cdf360411b29dcc3891cf1a29ca5dd82f11a65136"
+    },
+    {
+      "path": "edumatch/major_demand.py",
+      "origin": "upstream_public_code",
+      "sha256": "49f4a3ee4d47cbfb5d1faeb1042a9aae2b5250638cd71b873de1bda7cf016f9f"
+    },
+    {
+      "path": "edumatch/majors.py",
+      "origin": "upstream_public_code",
+      "sha256": "1059d36f2ceb84b39259ad5923efdd0c29ce00393be6156d5ae1a50ebf6bca0b"
+    },
+    {
+      "path": "edumatch/occupation.py",
+      "origin": "upstream_public_code",
+      "sha256": "a4d5db803b3b485600a9e214198657b19f061492b54eb934ebbd4c0580766d11"
+    },
+    {
+      "path": "edumatch/ontology.py",
+      "origin": "upstream_public_code",
+      "sha256": "80010e348e5cd481562e3a375d9ff4fecd5a6e647362571ac6ba256dbc8044f3"
+    },
+    {
+      "path": "edumatch/pdf_text.py",
+      "origin": "upstream_public_code",
+      "sha256": "b5bcd3eb4ee3eafdfd9bacdb5d404c055d5c560bac8998ed81c0dcfdaa8b42b6"
+    },
+    {
+      "path": "edumatch/peers.py",
+      "origin": "upstream_public_code",
+      "sha256": "6694c114c9cb972d5ebf3ae10986322fa103a1a7697ba94c160de1c52e6faae8"
+    },
+    {
+      "path": "edumatch/personal_extract.py",
+      "origin": "upstream_public_code",
+      "sha256": "df1eeda897cebdbfbae01e0ad6251c56c62014f46b6ce555e4116ef35cbb527c"
+    },
+    {
+      "path": "edumatch/profiles.py",
+      "origin": "upstream_public_code",
+      "sha256": "b05a0a961af165143be6cfa7ca689ee4af18ddbd26bfd9134fd5580610937aef"
+    },
+    {
+      "path": "edumatch/retrieval_sweep.py",
+      "origin": "upstream_public_code",
+      "sha256": "be4021880f39aa09e002cab7cfe0ad5561895ab87705a4b24b18b43ca1c754cf"
+    },
+    {
+      "path": "edumatch/semantics.py",
+      "origin": "upstream_public_code",
+      "sha256": "ff7827ee6481435c0f3052b233510bfaefcaeda6401aae25c63c9cceef20025a"
+    },
+    {
+      "path": "edumatch/skills_mining.py",
+      "origin": "upstream_public_code",
+      "sha256": "d5782007cf84c1826cd95e93eb9f09090b5324859fc320e4bf640818cfef95d2"
+    },
+    {
+      "path": "edumatch/source_modes.py",
+      "origin": "upstream_public_code",
+      "sha256": "0fcb06ff7b4cc4bf6f456fd448796eafbdf388e0c2610414eccb738f7f11f7e8"
+    },
+    {
+      "path": "edumatch/sources/__init__.py",
+      "origin": "upstream_public_code",
+      "sha256": "6268f523a081127ba8d38fd0e98e0d6247e12709b6ea990bcd4459180ab08e95"
+    },
+    {
+      "path": "edumatch/sources/education_web.py",
+      "origin": "upstream_public_code",
+      "sha256": "7afd1c9058613b00a788b783cd58ab0ab0278e2ac48c88182a5c688553c1b6d8"
+    },
+    {
+      "path": "edumatch/tools/__init__.py",
+      "origin": "upstream_public_code",
+      "sha256": "2b21e3a2d66a568987aeb296cdc49b628f8f166f6ca8c10b3e8240ebd5d7baf3"
+    },
+    {
+      "path": "edumatch/tools/analysis_tools.py",
+      "origin": "upstream_public_code",
+      "sha256": "b5be5a336cedd4ebe3d7899040950e2b15a6fcf5191b8cd9a0cd4afe09a35fec"
+    },
+    {
+      "path": "edumatch/tools/competition_tools.py",
+      "origin": "competition_upgrade",
+      "sha256": "4cd879be8d2aaf2eb3ab4ef299b249eda5cd4d3d577b680d72a95b0f8023c33c"
+    },
+    {
+      "path": "edumatch/tools/education.py",
+      "origin": "upstream_public_code",
+      "sha256": "e013e445b8f7c6ce45ed5d3628613b5632b538371dfed0d52a6678f754e5c9d2"
+    },
+    {
+      "path": "edumatch/tools/evidence_tools.py",
+      "origin": "upstream_public_code",
+      "sha256": "d1982c7059ab65cec3a510502da14dab29986b01f0e2dd5c82ab8ca54d70ab59"
+    },
+    {
+      "path": "edumatch/tools/evidence_v2_tools.py",
+      "origin": "competition_upgrade",
+      "sha256": "236aa8c924725e8d0e65f8279a1b1fe5e3eef16bac64057dd0e4dc8c14f497c3"
+    },
+    {
+      "path": "edumatch/tools/literature_tools.py",
+      "origin": "upstream_public_code",
+      "sha256": "c251ef09deb390b7403cb7d68fe866a1503a616770e876a3383ca3d4dd18b875"
+    },
+    {
+      "path": "edumatch/tools/policy.py",
+      "origin": "upstream_public_code",
+      "sha256": "d133067207ad7f69632cb0bad716bffae7d6c7518e49bb3b751f348b2f0c5d28"
+    },
+    {
+      "path": "edumatch/tools/recruitment.py",
+      "origin": "upstream_public_code",
+      "sha256": "bfd007bb69762925324ccfc2037161feb21d3c2dd958f5479ca740f6ddeeabf5"
+    },
+    {
+      "path": "edumatch/tools/registry.py",
+      "origin": "competition_upgrade",
+      "sha256": "45fce822227f1c46a838be216d7745584cc1f94e9e32928d2301ec5b81c9ad79"
+    },
+    {
+      "path": "edumatch/tools/supply_source.py",
+      "origin": "upstream_public_code",
+      "sha256": "69731867a50f7b5b2edb3e8ac23b015494a5e7e4cb9f4da0dd7756b8ebfe90cd"
+    },
+    {
+      "path": "edumatch/vocab.py",
+      "origin": "upstream_public_code",
+      "sha256": "027b629328c25d96d93e7dccbbf26c967e56fe2447690554909a77ee74a3ebe5"
+    },
+    {
+      "path": "mcp_servers/__init__.py",
+      "origin": "upstream_public_code",
+      "sha256": "1803f4179fa72cd1a2eac1bbffec8b2429bfbbf6be54acab18809013a5b45173"
+    },
+    {
+      "path": "mcp_servers/__main__.py",
+      "origin": "upstream_public_code",
+      "sha256": "540fd0a5992ca535482a9d44b2e268ce3a39bb47a0576f301214afa5ef4494b9"
+    },
+    {
+      "path": "mcp_servers/server.py",
+      "origin": "competition_upgrade",
+      "sha256": "3499df2412bc5aa6e8b2b7e60490fe2155e40db4107ded77e9a7480e55c2df17"
+    },
+    {
+      "path": "ontology/skill_ontology.yaml",
+      "origin": "upstream_public_code",
+      "sha256": "b2ff96977a28e97b8e9eb0a7c2e463e6fa3c3a24e9b5a83c49199e6cb313ad9f"
+    },
+    {
+      "path": "reporting/__init__.py",
+      "origin": "upstream_public_code",
+      "sha256": "ba006e3b6bbce4af90fc922244bfe564607776e88f991791c61101019c5f57b0"
+    },
+    {
+      "path": "reporting/components.py",
+      "origin": "upstream_public_code",
+      "sha256": "702f7e9894278b8de5dcfea0baddbec4bc81a36bf9cfce2d1a4c2190eec341a7"
+    },
+    {
+      "path": "reporting/render.py",
+      "origin": "upstream_public_code",
+      "sha256": "a84450f691b38ef92e41eaa1b6ee7868196f71cbb58fa0b24bb7b54676b15f82"
+    },
+    {
+      "path": "reporting/templates/README.md",
+      "origin": "upstream_public_code",
+      "sha256": "565dcccb5fd8c1b55bb11e599f8e1760e40343675f27822a2e45c1e3f4c2f003"
+    },
+    {
+      "path": "reporting/templates/build_page_template.py",
+      "origin": "upstream_public_code",
+      "sha256": "1ef9ad5029692a1b644bd74d75c257b87587a5df722c0659dce01efb95ddee14"
+    },
+    {
+      "path": "reporting/templates/custom_report_example.py",
+      "origin": "upstream_public_code",
+      "sha256": "4641b38007ab0b7ac2776007f6b42b53bef672eac63500d3aa3d5a949e807733"
+    },
+    {
+      "path": "reporting/templates/page_template.html",
+      "origin": "upstream_public_code",
+      "sha256": "c0b333b317b433c948f80e05b8f0f47aacd6277257297051f8f326f9803e64f2"
+    },
+    {
+      "path": "reporting/templates/page_template_micro.html",
+      "origin": "upstream_public_code",
+      "sha256": "1883bdcfe72be848dcbbe72594f74761a6a829dea1142a46c00f7ee07be505c5"
+    },
+    {
+      "path": "reporting/templates/placeholder_result.json",
+      "origin": "upstream_public_code",
+      "sha256": "27763ce54ecc06d763674a6df2364c7d97237eca11442a3f730efb19e11abb8a"
+    },
+    {
+      "path": "reporting/theme.py",
+      "origin": "upstream_public_code",
+      "sha256": "39ce38dccfe232c69f0206fda7f5f3e3ca8ff6cd93ff5bf263d2a8daf15cbcf3"
+    },
+    {
+      "path": "scripts/analyze.py",
+      "origin": "upstream_public_code",
+      "sha256": "e84281f3c1f0a8426b9c8454cbcfe8f1732b1c928a3027bdc77dbeed0280d333"
+    },
+    {
+      "path": "scripts/analyze_school_major.py",
+      "origin": "upstream_public_code",
+      "sha256": "0b440c2be938e4ae5c3424ada89e492b237d289a86092f74e2e11349ed4173b0"
+    },
+    {
+      "path": "scripts/audit_course_coverage.py",
+      "origin": "upstream_public_code",
+      "sha256": "659efcb45c37c531dc069faf6f2b2245f29e9acd4882823187fd7a09df7e8053"
+    },
+    {
+      "path": "scripts/audit_data_coverage.py",
+      "origin": "upstream_public_code",
+      "sha256": "ae35ad4e208e2c8fac4df3916928e3ae2778a179a05d497154e0606ad9f6ba82"
+    },
+    {
+      "path": "scripts/audit_university_coverage.py",
+      "origin": "upstream_public_code",
+      "sha256": "16a1225fbda4680eb5166eee6c26f7b974e1f0d2ce81e6fba3e42fa7c7b91a30"
+    },
+    {
+      "path": "scripts/auto_harvest.py",
+      "origin": "upstream_public_code",
+      "sha256": "773737ca28836e9474c058aee1225ed4470d6f1d8e7f5167c8c881f2f33b026b"
+    },
+    {
+      "path": "scripts/batch_school_analysis.py",
+      "origin": "upstream_public_code",
+      "sha256": "42838af86a84e565b272add9fd671fe686e859b12eb8adf509679f45d520939d"
+    },
+    {
+      "path": "scripts/build_crawl_request.py",
+      "origin": "upstream_public_code",
+      "sha256": "b7844f43d5c7de8d823c1311a919e72bfa476261dcd94cd2eeee2a59cc90ad07"
+    },
+    {
+      "path": "scripts/build_crawl_request_v2.py",
+      "origin": "upstream_public_code",
+      "sha256": "1aefb175724b2814d9f9a0a9da2d63e4bbf1d3abd2f3a294b578ae04a05a0f6d"
+    },
+    {
+      "path": "scripts/build_harvest_domains.py",
+      "origin": "upstream_public_code",
+      "sha256": "95416bcdbeffbccbc4a326acc7dae028e68aa92b7cb0d48bc7eb09dcf4d9debc"
+    },
+    {
+      "path": "scripts/build_harvest_replay.py",
+      "origin": "upstream_public_code",
+      "sha256": "161b26dff6671b339cd6aee44f51b368f8dbebd24ee171930e4174aa38f9d804"
+    },
+    {
+      "path": "scripts/build_publish_bundle.py",
+      "origin": "upstream_public_code",
+      "sha256": "e5a5f5b22df177a91732bc754491107c9e2664c31ac1b92e69fdb17080f27045"
+    },
+    {
+      "path": "scripts/build_source_index.py",
+      "origin": "upstream_public_code",
+      "sha256": "6f43ea13f73296419ddc5e0b0849d8853b3cf9cf16a7bc5e75ead032aef756d4"
+    },
+    {
+      "path": "scripts/check_curated_dependency.py",
+      "origin": "upstream_public_code",
+      "sha256": "399cd3b1c4f6ff775b8de4a3e3570a5aa4c7dbf4f4068e9188549e44a501f79a"
+    },
+    {
+      "path": "scripts/check_portability.py",
+      "origin": "upstream_public_code",
+      "sha256": "56f3b52cb06e45aebbfe59e0ae995bc4101d0f8754f84c05e4d20f7a67dbcacc"
+    },
+    {
+      "path": "scripts/compare_tsi_versions.py",
+      "origin": "upstream_public_code",
+      "sha256": "dae4254ac685636a031c33a839023342b3b4c4cf75a7c5f254007d0757f1b581"
+    },
+    {
+      "path": "scripts/demo_source_modes.py",
+      "origin": "upstream_public_code",
+      "sha256": "910adfc6803af728d3764807e92a22ff51ffd2a56c21a62140a88384af6ec760"
+    },
+    {
+      "path": "scripts/diagnose_analysis_quality.py",
+      "origin": "upstream_public_code",
+      "sha256": "feeac357fb0e023b0779d0c17c51eab8ef3a4adbcf64c1d51eef211ce90cb673"
+    },
+    {
+      "path": "scripts/discover_school_domain.py",
+      "origin": "upstream_public_code",
+      "sha256": "429f106882e13309a43a4a5ccf65948f7e83c761428909c74ba8e6b532fd8c8d"
+    },
+    {
+      "path": "scripts/evidence_agent.py",
+      "origin": "competition_upgrade",
+      "sha256": "cc4704e7a36cefd6a6be5203c4a962c25e719247ffdb78f7aaad449a62191295"
+    },
+    {
+      "path": "scripts/export_policy_cache.py",
+      "origin": "upstream_public_code",
+      "sha256": "c52b01db78fad82e783dedeaa97d3f675ddf9b6594c07a6912a87c8b5773e6d7"
+    },
+    {
+      "path": "scripts/extract_pdf_major_rows.py",
+      "origin": "upstream_public_code",
+      "sha256": "54b9b5c7546530f43aacfd1829c9d3b3d2aebfc1468ae1eddb4bde1e53b0a3f7"
+    },
+    {
+      "path": "scripts/find_source.py",
+      "origin": "upstream_public_code",
+      "sha256": "b6850832450f55df56b55aad480b893b25b267029b7c7bf94bb98f386cc3c73c"
+    },
+    {
+      "path": "scripts/gen_docs.py",
+      "origin": "upstream_public_code",
+      "sha256": "26458723d5d586e142bd2e536231dd05e52deb53c746d10e6585797f4275584c"
+    },
+    {
+      "path": "scripts/harvest_peers.py",
+      "origin": "upstream_public_code",
+      "sha256": "c6c15edc437c46215c7ce59da16a2f80bff8c2a0996001576dc3a61f463e910b"
+    },
+    {
+      "path": "scripts/import_extra_text.py",
+      "origin": "upstream_public_code",
+      "sha256": "5a67b39b0f277b9f06c762c515e0e9896def2741cd44ce0e3c53290ffa54d838"
+    },
+    {
+      "path": "scripts/import_job_exports.py",
+      "origin": "upstream_public_code",
+      "sha256": "8efb758bfe0de3024ed8e4f18c2e5532d59e2cfbb29af72251971d950135b4c4"
+    },
+    {
+      "path": "scripts/import_supplementary.py",
+      "origin": "upstream_public_code",
+      "sha256": "a1e14fd250e969a57695ff7bf3de5ca177a534c7116748145e9f3dc8ee70feba"
+    },
+    {
+      "path": "scripts/merge_job_exports.py",
+      "origin": "upstream_public_code",
+      "sha256": "3e4a249b14f5ecb8d9ddb48ccafe20cec5ec665d0956456bbcfef3e575d8896e"
+    },
+    {
+      "path": "scripts/normalize_source_layout.py",
+      "origin": "upstream_public_code",
+      "sha256": "a9cc261d50ab3b85ace588b2c61efd70b88cf48a3ba8949f85d9eaf2687e6aa7"
+    },
+    {
+      "path": "scripts/reextract_pdf_facts.py",
+      "origin": "upstream_public_code",
+      "sha256": "08dd8a99dd1e62588ef9b618ad1a53dc811bb20e465b0d89a12b71fe4926c8eb"
+    },
+    {
+      "path": "scripts/relativize_paths.py",
+      "origin": "upstream_public_code",
+      "sha256": "ffbd26c2957a74c5501c9f64f2fdac22eda3e12e75439a7ce64d59b5ead2fd30"
+    },
+    {
+      "path": "scripts/resolve_school_domains.py",
+      "origin": "upstream_public_code",
+      "sha256": "9b2686261ec48ecd90c64be7e47bb048eddec9acee52c2b156ff45414b9974f0"
+    },
+    {
+      "path": "scripts/run_evaluation.py",
+      "origin": "upstream_public_code",
+      "sha256": "277769428ebc59b6ec1de6d5521094faba89807de7d8f687ab89f6a9cea26070"
+    },
+    {
+      "path": "scripts/validate_edumatch.py",
+      "origin": "upstream_public_code",
+      "sha256": "04a8e3e9de5d8fa9a1218a7ebd7d3294ba9708e7f0cee957cad927a544706b23"
+    },
+    {
+      "path": "scripts/verify_evidence_release.py",
+      "origin": "competition_upgrade",
+      "sha256": "346babb8de580284d7d75d1847d24e7d6ff2dc792265f4bad6ba779b3e5b319a"
+    },
+    {
+      "path": "tests/test_competition_actions.py",
+      "origin": "competition_upgrade",
+      "sha256": "9c0c5b51fdd0f6cf9de8f14dfce714a928c32bb841f9e6d21e4679b5fa66f600"
+    },
+    {
+      "path": "tests/test_competition_simulation.py",
+      "origin": "competition_upgrade",
+      "sha256": "da05d6d99eff95eb00988a74659845ea83eb9e295db40037ca688ef72d14d1de"
+    },
+    {
+      "path": "tests/test_evidence_v2.py",
+      "origin": "competition_upgrade",
+      "sha256": "ba840bb5498f17e5fda9e7c355e09bfd2dd71e741325f959343dddbba160f3fe"
+    },
+    {
+      "path": "vendor/edu-material-harvest/.agents/plugins/marketplace.json",
+      "origin": "upstream_public_code",
+      "sha256": "f73512521c580c63401a3602cc7b4f2c991eaad8333035ffea69b8f9fe27026c"
+    },
+    {
+      "path": "vendor/edu-material-harvest/.claude-plugin/marketplace.json",
+      "origin": "upstream_public_code",
+      "sha256": "a72ff3caea202e3416ae74d0f93b0a0261c9d0f1974722cfc381c499913a6115"
+    },
+    {
+      "path": "vendor/edu-material-harvest/.claude-plugin/plugin.json",
+      "origin": "upstream_public_code",
+      "sha256": "92ce65b156bb4409965a11a6bf951ff7324d25e49f2121dc736a745c48c3abed"
+    },
+    {
+      "path": "vendor/edu-material-harvest/.codex-plugin/plugin.json",
+      "origin": "upstream_public_code",
+      "sha256": "d14535b54df525ae651f9222feb0a6a6879a3acc0b2dec3ae3be8132e97bcde2"
+    },
+    {
+      "path": "vendor/edu-material-harvest/.mcp.json",
+      "origin": "upstream_public_code",
+      "sha256": "280cd16c839bdf5e41ff0066aafcca7039273663ea5f12a49f42aff2f37751b1"
+    },
+    {
+      "path": "vendor/edu-material-harvest/README.md",
+      "origin": "upstream_public_code",
+      "sha256": "aef929fbf4e2d081244312d2feb33995e597e7ead68d5ede66e7a9e76b1c3c81"
+    },
+    {
+      "path": "vendor/edu-material-harvest/cordis.patch.yml",
+      "origin": "upstream_public_code",
+      "sha256": "e439f7cb3ba5baa9554091bbe350a4dd826e5362a4ae987001b5c0e1cbe707aa"
+    },
+    {
+      "path": "vendor/edu-material-harvest/lib/index.js",
+      "origin": "upstream_public_code",
+      "sha256": "72dd0f8ffd9361ee6c1fec4229b68c65d41d50a8944315a774697d37b5c0c3ff"
+    },
+    {
+      "path": "vendor/edu-material-harvest/package.json",
+      "origin": "upstream_public_code",
+      "sha256": "9a9c4e08e5e04495ffb40695f394ba5231d0a73a6190af001d9b8e4cab1bfd04"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/README-安装与接入.md",
+      "origin": "upstream_public_code",
+      "sha256": "33566763c23a3a14e8532fc162ccb009904b1be51470aef507f54ff908106129"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/SKILL.md",
+      "origin": "upstream_public_code",
+      "sha256": "954b0a73f3546d0b50a4d2f0aba6cd7dc3749df8c442b8f51caf09ea18a3badd"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/00-通用纪律.md",
+      "origin": "upstream_public_code",
+      "sha256": "fd56e955a55f1fcfcb33c381dbb66d49d3e84e123210a04bab89249ce7fa3088"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/01-培养方案.md",
+      "origin": "upstream_public_code",
+      "sha256": "05f838897e5aec068ebf754798f12e4649cada48ca91c7f7b947d6202d461e0c"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/02-专业介绍.md",
+      "origin": "upstream_public_code",
+      "sha256": "fc95163dd33396977af76298171ead7b961b82982f023f19818f481da95a02ff"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/03-课程大纲.md",
+      "origin": "upstream_public_code",
+      "sha256": "d227266196882c852f2cf67f6fe24f4d1a04401988c620a7137f960cd71d170f"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/04-年度报告.md",
+      "origin": "upstream_public_code",
+      "sha256": "7daba6f0ae6ee31bf53ca1d2132f4eec06d91f3a47eb4deb219ca2be9789f1ed"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/05-检索与反爬.md",
+      "origin": "upstream_public_code",
+      "sha256": "5c02b1f8936644d83a9568f458c5187bf3f55e25430253eb3d93cd7a5f4bfa73"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/06-去重与台账.md",
+      "origin": "upstream_public_code",
+      "sha256": "68b32f82efbf14230e828fe14461e0ac85edcce286bfa19212811abec0a9523d"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/07-来源清单与模板.md",
+      "origin": "upstream_public_code",
+      "sha256": "59ea1def9c036ad387ce552b89f9547b98d99d50a7d51a70780dab434c37a9f0"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/08-自动发现逻辑.md",
+      "origin": "upstream_public_code",
+      "sha256": "bef2ee720e16d15beaa0590e696c8f96f2d33c88e0516ca7d4cca69c353810b7"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/09-Agent接入与MCP.md",
+      "origin": "upstream_public_code",
+      "sha256": "98863fe4ddd10a655938b37d02098b543f7839f47748771e91d84f9cb94c0535"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/10-地区批量.md",
+      "origin": "upstream_public_code",
+      "sha256": "e0097c963d6abea3406329198d1e5291244b2f905d789180665d098ac3358536"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/11-DeepSeek-Harness接入.md",
+      "origin": "upstream_public_code",
+      "sha256": "d89b03205c4de2c20405eb9674fe3aad2a5bf00db03778818710f0d12e9225ad"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/data/211.json",
+      "origin": "upstream_public_code",
+      "sha256": "88dc0afad4fc35ef2e1f4222bce91f6a72be8f61e0566b7a8a1aa0a81d14fe13"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/data/985.json",
+      "origin": "upstream_public_code",
+      "sha256": "5c29d5502583b2be0d966b0a58227be4af4bf31240ac9d5c0473f01e47183cf7"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/data/univ_list_2026-06-17.json",
+      "origin": "upstream_public_code",
+      "sha256": "9753c03591b341720bd7cd93d13063f3608daf2a9b4d49e85f2265da52e4fd21"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/references/schools_seed.example.json",
+      "origin": "upstream_public_code",
+      "sha256": "d29ac0ec554ef63bdbbd2fbbd09b65daad52b8286f224bba42816305f4045562"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/scripts/common.py",
+      "origin": "upstream_public_code",
+      "sha256": "14d7dccfadd239146eb81d5549ea0fad9cd7d4a2e8432e2be19c7fd8014e32bf"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/scripts/discover.py",
+      "origin": "upstream_public_code",
+      "sha256": "ad8cd6c3f72f68969bd2c6743565d69d10e94c43612ad3a98edfd808ff1c8fb5"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/scripts/download.py",
+      "origin": "upstream_public_code",
+      "sha256": "0e7175f99a57d522c4630def26015a659a5ff342bc54b08077410f04933c1302"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/scripts/enum_helpers.py",
+      "origin": "upstream_public_code",
+      "sha256": "a777ecf67c27140b39e03aaa1f5eb1680e93104fb203332b6425aeba591117c3"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/scripts/env.py",
+      "origin": "upstream_public_code",
+      "sha256": "b501cace30c542d02e9622c9284e642021341628455f0cf5b331b8e900adc2c9"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/scripts/generate_tutorial.py",
+      "origin": "upstream_public_code",
+      "sha256": "087519db1684517d380c495cfd3642435d5fcb0ef1ba944e302a8ed283ffdaf1"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/scripts/mcp_server.py",
+      "origin": "upstream_public_code",
+      "sha256": "479dc896c787d6112d1f1d420d8d5c9c229593694dbcbe7c706da9ff6448ae71"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/scripts/region_seeds.py",
+      "origin": "upstream_public_code",
+      "sha256": "1719baa2d7649faecf6fc074a3fab8b41a667714a83c44a19de9fde0b8ffb91b"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/scripts/report.py",
+      "origin": "upstream_public_code",
+      "sha256": "774ec658a03e02efe68e7804ca092cebd59314e01c843953d0503e46ede02241"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/scripts/requirements.txt",
+      "origin": "upstream_public_code",
+      "sha256": "eae36d505ff74423f0dea2d8c9fc5d78bb6add6b150e782183589047d4577f05"
+    },
+    {
+      "path": "vendor/edu-material-harvest/skills/edu-material-harvest/scripts/selftest.py",
+      "origin": "upstream_public_code",
+      "sha256": "a41a8e640ea1b777cc9e3b0fe503b97c92e7a592fd38361bbade5eaa3b541a5d"
+    }
+  ]
+}
